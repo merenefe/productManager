@@ -1,3 +1,5 @@
+Not:Daha önce backend developer olarak PHP ile projeler geliştirdim fakat bu proje node js adına gelistirmeye başladığım ilk proje oldu.
+
 Görevde İki Adet Eksik Bulunmaktadır;
 1-Doviz Api
 2-Güncelleme İşlemi
