@@ -1,0 +1,78 @@
+{{> header_admin}}
+
+<div class="container col-md-9 ">
+  <h2 class="text-center mt-3 mb-3">Yönetim Paneli</h2>       
+    <form action="admin/update/631e31c77cb971bcce0e4a15" method="GET">
+          <table class="table">
+    <thead>
+      <tr>
+        <th>Ürün İsmi</th>
+        <th>Açıklaması</th>
+        <th>Fiyatı</th>
+        {{!-- <th>Güncelle</th> --}}
+        <th>Sil</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+              <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.price}}<span>₺</span></td>
+        {{!-- <td><button class = "btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#updateInfos">Güncelle</button></td> --}}
+        <td><a href="admin/delete/{{this._id}}" class="btn btn-danger text-white" >Sil</a></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+    </form>
+
+        <form action="/admin/" method="POST">
+          <table class="table">
+    <tbody>
+              <tr>
+        <td><input type="text"  name="title" required></td>
+        <td><input type="text" name="description" required></td>
+        <td><input type="text" name="price" required><span>₺</span></td>
+        <td><button type="submit"  class = "btn btn-success">Ekle</button></td>
+      </tr>
+    </tbody>
+  </table>
+    </form>
+    <form action="" method="POST">
+  <div class="modal fade" name="updateInfos" id="updateInfos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="text-transform:capitalize;" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col">
+             
+				<div class="input-group mb-3">
+   <input type="text" class="form-control" name="text" placeholder="Yeni Ürün İsmi" aria-label="First name" id="basic-url" aria-describedby="basic-addon3">
+</div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <button type="submit" name="saveSocialMedia" class="btn btn-primary" data-bs-dismiss="modal">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
+
+
+
+
+
+<script>
+    
+
+</script>
+ {{> footer}}
