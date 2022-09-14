@@ -1,5 +1,31 @@
 {{> header}}
+<script>
 
+async function getCurrencyUSD(){
+
+
+
+await fetch(`https://v6.exchangerate-api.com/v6/f2ad7f71840940459889d43f/latest/TRY`)
+  .then(response => response.json())
+    .then(result =>   console.log(result.conversion_rates.USD))
+  .catch(error => console.log('error', error));
+
+
+}
+async function getCurrencyEUR(){
+
+
+
+await fetch(`https://v6.exchangerate-api.com/v6/f2ad7f71840940459889d43f/latest/TRY`)
+  .then(response => response.json())
+    .then(result =>   console.log(result.conversion_rates.EUR))
+  .catch(error => console.log('error', error));
+
+
+}
+getCurrencyEUR()
+getCurrencyUSD()
+</script>
         <div class="py-5 bg-light">
           <div class="container">
       
